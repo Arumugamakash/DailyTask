@@ -12,10 +12,17 @@ public class Problem3 {
 	}
 
 	// SOLUTION 1
-	private int solution1(int[] arr) {
-		int hash[] = new int[arr.length + 1];// 8
-		for (int i = 0; i < arr.length; i++) {
-			hash[arr[i]]++;
+	private int solution1(int[] nums) {
+		int max=0;
+		for (int i = 0; i < nums.length-1; i++) {
+			if(nums[i]<nums[i+1]) {
+				max=nums[i+1];
+			}
+		}
+		int hash[] = new int[max+1];// 8
+		System.out.println("max"+max);
+		for (int i = 0; i < nums.length; i++) {
+			hash[nums[i]]++;
 		}
 		for (int i = 0; i < hash.length; i++) {
 			if (hash[i] == 1) {
