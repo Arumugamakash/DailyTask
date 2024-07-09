@@ -21,11 +21,10 @@ public class FourSum {
 	// solution 1
 	private List<List<Integer>> solution1(int[] nums, int target) {
 		List<List<Integer>> list = new ArrayList<List<Integer>>();
-		Set<Integer> set = new HashSet<Integer>();
 		for (int a = 0; a < nums.length; a++) {
 			for (int b = a + 1; b < nums.length; b++) {
 				for (int c = b + 1; c < nums.length; c++) {
-
+					List<Integer> set = new ArrayList<Integer>();
 					for (int d = c + 1; d < nums.length; d++) {
 						int sum = nums[a] + nums[b] + nums[c] + nums[d];
 						if (sum == target) {
@@ -33,16 +32,15 @@ public class FourSum {
 							set.add(nums[b]);
 							set.add(nums[c]);
 							set.add(nums[d]);
-							List<Integer> innerList = new ArrayList<Integer>(set);
-							list.add(innerList);
+							list.add(set);
 							break;
 						}
 					}
-
 				}
 			}
 
 		}
+
 		return list;
 	}
 
