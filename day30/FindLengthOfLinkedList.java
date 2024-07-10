@@ -33,7 +33,6 @@ public class FindLengthOfLinkedList {
 		Node temp = head;
 		while (temp != null) {
 			count++;
-			System.out.println("varan");
 			temp = temp.next;
 		}
 		System.out.println(count);
